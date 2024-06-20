@@ -82,6 +82,9 @@ justify-content: center;
   border-right: none;
 }
 .toggle-password-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 0;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
@@ -99,6 +102,7 @@ justify-content: center;
   height: auto;
   opacity: 0.5;
   transition: opacity 0.2s ease;
+
 }
 .toggle-password-button {
   position: relative; 
@@ -106,7 +110,7 @@ justify-content: center;
 .toggle-password-button.show::before {
   content: '';
   position: absolute;
-  top: 47%;
+  top: 50%;
   left: 50%;
   width: 20px;
   height: 1px;

@@ -2,6 +2,7 @@ import styled from "styled-components";
 export const SCHeader = styled.div`
 
 .header{
+    margin: 0;
     border-bottom: 1px solid rgb(184, 184, 184);
     display: flex;
     width: 100vw;
