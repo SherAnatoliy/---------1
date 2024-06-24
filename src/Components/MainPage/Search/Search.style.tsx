@@ -2,11 +2,12 @@ import styled from "styled-components";
 export const SCSearch = styled.div`
 .Search{
     display: flex;
-    width: 100vw;
+    width: 100%;
+    margin: 0;
     justify-content: center;
     align-items: center;
     height: 450px;
-    margin-top: 1px;
+    
     /* position: fixed; */
     background-image: url('../../../public/Img/Main/ocr.jpg');
     background-repeat: no-repeat;
@@ -83,8 +84,8 @@ export const SCSearch = styled.div`
     width: 48px;
     height: 48px;
     position: absolute;
-    top: 80.5%;
-    left: 87%;
+    margin-top:-48.5px;
+    margin-left: 520px;
     border-radius: 50%;
     border: none;
     }
@@ -107,8 +108,8 @@ export const SCSearch = styled.div`
         width: 40px;
         height: 48px;
         position: absolute;   
-        top: 80.5%;
-        left: 82%;
+        margin-top:-48.5px;
+        margin-left: 490px;
         border: none;
     }
     .Search_delete img{

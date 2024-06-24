@@ -2,7 +2,6 @@ import styled from "styled-components"
 
 export const SCLoginPage = styled.div`
 body{
-    font-family: 'Galano Grotesque Alt', sans-serif;
     display: flex;
 justify-content: center;
 
@@ -67,7 +66,7 @@ justify-content: center;
   display: flex;
   justify-content:center ;
   align-items: center; /* Выравнивание по вертикали */
-  width: 353px;
+  width: 320px;
   height: 52px;
   
 }
@@ -90,7 +89,7 @@ justify-content: center;
     border-top-right-radius: 10px;
     border-right: none;
     width: 40px;
-    height: 53.3333px; 
+    height: 52px; 
     border: 1px solid #b1b1b1;
     border-left: none;
     background-color: white; 
@@ -115,7 +114,6 @@ justify-content: center;
   width: 20px;
   height: 1px;
   background-color: #b1b1b1;
-  
   transform: translate(-50%, -50%) rotate(140deg);
 }
 

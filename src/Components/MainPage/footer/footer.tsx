@@ -1,70 +1,9 @@
 
-// import React, { useState } from "react";
-import "./MainPage.scss";
-import { Header } from "../../Components/MainPage/Header/Header";
-import { Search } from "../../Components/MainPage/Search/Search";
-import { Heading } from '../../Components/Typography/Heading';
-import { PictureSection2 } from "../../Components/MainPage/PictureSection2/PictureSection2";
-import { Section3 } from '../../Components/MainPage/section3/section3';
-import { Section4 } from "../../Components/MainPage/section4/section4";
-import { Section5 } from "../../Components/MainPage/section5/section5";
-import { Section6 } from "../../Components/MainPage/section6/section6";
-import { Footer } from "../../Components/MainPage/footer/footer";
-// import AppButton from '../../Components/Button/Button';
-
-export const MainPage: React.FC = () => /* const [activeButton, setActiveButton] = useState(null);*/ /* const handleClick = (buttonId) => {*/ /*   setActiveButton(buttonId === activeButton ? null : buttonId);*/ /* };*/ (
-  <>
-    <Header />
-    <Search />
-    <section className="section_2">
-      <div className="h2_section2">
-        <Heading headingType="h2" headingText="Browse homes in Miami, FL" />
-      </div>
-      <PictureSection2 />
-    </section>
-    <section className="section_3">
-      <Section3 />
-    </section>
-    <section className="section4">
-      <Section4/>
-      {/* <div className="section5">
-      <div className="section5_top">
-        <div className="section5_top_left"><img src="../../../public/Img/Main/section5main/hp-hero-mortgage-desktop-cube.avif" alt="" /></div>
-        <div className="section5_top_right">
-          <span className="section5_top_right_span1">Need a home loan? Get pre-approved</span>
-          <span className="section5_top_right_span2">Find a lender who can offer competitive mortgage rates and help you with pre-approval.</span>
-          <a className="section5_top_right_a" href="">
-            <span>Get pre-approved now</span>
-          </a>
-          <div className="section5_top_right_bottom">
-          <button><span>Advertising disclosure</span></button>
-          </div>
-      </div>
-        </div>
-     
-      <div className="section5_bottom">
-        <div className="section5_bottom_left">
-          <Heading  headingType={"h3"} headingText={"Get local info"}/>
-        <p><span>Does it have pet-friendly rentals? How are the schools? Get important local information on the area you're most interested in.</span></p>
-        <div className="search">
-        <ButtonSearch />
-        <button className="section5_Search_delete"><img src="../../../public/Img/Main/cross_u6k2vj2ibjve.svg" alt="" /></button>
-        <button className="section5_Seacrh_enter"><img src="../../../public/Img/Main/search_ssrbk50vdc29.svg" alt="" /></button>
-        </div>
-
-        </div>
-        <div className="section5_bottom_right">
-          <img src="../../../public/Img/Main/section5main/hp-local-desktop-cube.jpg" alt="" />
-         
-          </div>
-          
-        
-      </div>
-    </div> */}
-    <Section5/>
-    <Section6/>
-    </section>
-    {/* <footer className="footer">
+import { SCFooter } from './footer.style';
+export const Footer = () => {
+    return(
+        <SCFooter>
+             <footer className="footer">
       <div className="footer_top">
         <div className="footer_top_left">
         <img src="../../../public/Img/Main/footer/instagram_ee1dilgl1rtu.svg" alt="" />
@@ -212,10 +151,7 @@ export const MainPage: React.FC = () => /* const [activeButton, setActiveButton]
         </div>
         <div className="footer3"><span>© 1995--2024 <a href="">Nation Association of REALTORS</a> ®and <a href="">Move,Inc.</a> All rights reserved</span></div>
       </div>
-    </footer> */}
-<Footer/>
-
-  </>
-);
-
-export default MainPage;
+    </footer>
+        </SCFooter>
+    )
+}

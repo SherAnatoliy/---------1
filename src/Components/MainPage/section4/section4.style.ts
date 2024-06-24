@@ -3,7 +3,7 @@ export const SCSection4 = styled.div`
 .section4_main_top{
     position: relative;
     display: flex;
-    width: 100vw;
+    width: 100%;
     height: 450px;
     margin-top: 60px;
     background-image: url('../../../public/Img/Main/section4/5c307d4a74dc5e10261a675ea1bbc57aw-c4287304772srd_q80.jpg_');
@@ -59,6 +59,7 @@ export const SCSection4 = styled.div`
 .section4_middle span{
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5)
 }
+
 .section4_bottom{
     display: flex;
     align-items: center;
@@ -81,6 +82,7 @@ export const SCSection4 = styled.div`
   color: rgb(192, 192, 192);
 }
 .section4_main_bottom{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -94,11 +96,14 @@ export const SCSection4 = styled.div`
     flex-direction: column;
    
 }
-.img{
+.section4_img img{
+    border-top-left-radius: 10px; 
+    border-top-right-radius: 10px; 
     width: 300px;
     height: 200px;
 }
-.span{
+.section4_card_span{
+    text-decoration: underline;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -114,5 +119,21 @@ export const SCSection4 = styled.div`
     text-align: center;
 
 }
+.section4_card_a{
+    height: 271px;
+    width: 300px;
+    text-decoration: none;
+    color: black;
+}
+.section4_span{
+    position: absolute;
+    color: white;
+    background-color: #3a71ca;
+    margin-top:10px;
+    margin-left: 10px;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 15px;
 
+}
 `

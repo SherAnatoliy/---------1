@@ -73,6 +73,7 @@ export const LoginPage = () => {
                 name="useremail"
                 render={({ field }) => (
                   <AppInput
+                  className="Login_input"
                     isRequired={false}
                     inputType="text"
                     inputPlaceholder="Введите свой email"
