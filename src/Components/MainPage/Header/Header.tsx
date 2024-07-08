@@ -27,13 +27,13 @@ export const Header = () => {
 </div>
 </div>
             
-            <div className="header_LoginSign">
+            {/* <div className="header_LoginSign">
                 <div className="header_login">
             <a href="http://localhost:5173/login">Log in</a>
                 </div>
              <button className="header_sigh">Sign up
              </button>
-            </div>           
+            </div>            */}
         
         </section>
      

@@ -5,10 +5,10 @@ import { createSlice } from "@reduxjs/toolkit/react"
 interface IUser {
     mail: string;
     phone_number: string;
-    user_id: 1;
+    user_id: number;
     name: string;
     reg_date: string;
-    city: string;
+   
 
 }
 

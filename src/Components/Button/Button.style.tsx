@@ -6,5 +6,6 @@ export const SCAppButton = styled.button`
     color: white;
     width: auto;
     margin-bottom: 30px;
+    border-radius: 15px;
   
 `

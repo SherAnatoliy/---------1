@@ -4,13 +4,15 @@ import "./MainPage.scss";
 import { Header } from "../../Components/MainPage/Header/Header";
 import { Search } from "../../Components/MainPage/Search/Search";
 import { Heading } from '../../Components/Typography/Heading';
-import { PictureSection2 } from "../../Components/MainPage/PictureSection2/PictureSection2";
+
 import { Section3 } from '../../Components/MainPage/section3/section3';
 import { Section4 } from "../../Components/MainPage/section4/section4";
 import { Section5 } from "../../Components/MainPage/section5/section5";
 import { Section6 } from "../../Components/MainPage/section6/section6";
 import { Footer } from "../../Components/MainPage/footer/footer";
+
 // import AppButton from '../../Components/Button/Button';
+import { PictureSection2 } from "../../Components/MainPage/PictureSection2/PictureSection2";
 
 export const MainPage: React.FC = () => /* const [activeButton, setActiveButton] = useState(null);*/ /* const handleClick = (buttonId) => {*/ /*   setActiveButton(buttonId === activeButton ? null : buttonId);*/ /* };*/ (
   <>
@@ -62,7 +64,7 @@ export const MainPage: React.FC = () => /* const [activeButton, setActiveButton]
       </div>
     </div> */}
     <Section5/>
-    <Section6/>
+    <Section6 />
     </section>
     {/* <footer className="footer">
       <div className="footer_top">

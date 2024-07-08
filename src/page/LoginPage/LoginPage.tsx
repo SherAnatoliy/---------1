@@ -2,14 +2,15 @@
 
 
 import { Controller, useForm } from "react-hook-form";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useLoginUserMutation } from "../../store/Api/authApi";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import AppInput from "../../Components/AppInput/AppInput";
-import { SCLoginPage } from "./LoginPagw.style";
+import { SCLoginPage } from './LoginPagw.style';
 import Button from "../../Components/Button/Button";
+
+
 
 const loginFormSchema = yup.object({
   useremail: yup.string().email().required("Обязательное поле!"),
@@ -21,16 +22,18 @@ const loginFormSchema = yup.object({
 
 export const LoginPage = () => {
   const navigate = useNavigate();
-  const [loginUser, { data: userData }] = useLoginUserMutation();
+  
 
   interface ILoginForm {
     useremail: string;
     userpassword: string;
   }
 
-  const onLoginSubmit = (data: ILoginForm) => {
-    loginUser({ email:data.useremail, password:data.userpassword });
-  };
+  // const onLoginSubmit = (data: ILoginForm) => {
+  //   loginUser({ email:data.useremail, password:data.userpassword });
+  // };
+
+  
 
   const {
     control,
@@ -41,22 +44,22 @@ export const LoginPage = () => {
       useremail: "",
       userpassword: "",
     },
+
     resolver: yupResolver(loginFormSchema),
   });
 
-  useEffect(() => {
-    if (userData?.user_id) {
-      navigate("/main");
+  const HandleClick = (info:ILoginForm) => {
+    if (info){
+      navigate('/MainPage')
+      localStorage.setItem('user', JSON.stringify(info))
     }
-    console.log(userData);
-  }, [userData, navigate]);
+  }
 
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
-
   return (
     <SCLoginPage className="LoginPage">
       <section className="LoginPage">
@@ -67,7 +70,7 @@ export const LoginPage = () => {
             <span>Log in to Realtor.com PRO</span>
           </div>
           <div className="login">
-            <form onSubmit={handleSubmit(onLoginSubmit)}>
+            <form onSubmit={handleSubmit(HandleClick)}>
               <Controller
                 control={control}
                 name="useremail"
@@ -113,14 +116,6 @@ export const LoginPage = () => {
                   />
                 </button>
                 </div>
-              {/* <div className="password_Login">
-                <input
-                  type={showPassword ? "text" : "password"}
-                  id="password-input"
-                  placeholder="Password*"
-                />
-        
-              </div> */}
               <a className="login_a" href="">
                 Forgot password?
               </a>
@@ -162,3 +157,5 @@ export const LoginPage = () => {
     </SCLoginPage>
   );
 };
+
+

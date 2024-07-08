@@ -1,65 +1,60 @@
+
+
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { baseUrl} from '../../utils/baseUrl';
+import { baseUrl, apiKey, apiHost } from '../../utils/baseUrl';
 
-interface IRegistrationUserPayload {
-    email:string,
-    password:string,
-    name:string,
-    phone_number:string,
-    user_city:string,
-    user_id?: number;
+interface ILoginUserResponse {
+    user_id?: number; 
+    email: string;
+    password: string;
 }
 
-interface IRegistrationUserResponse {
-
-    user_id?:number;
-    email:string,
-    password:string,
-    name:string,
-    phone_number:string,
-    user_city:string,
-}
-
-interface ILoginUserResponse extends  IRegistrationUserResponse{}
 interface ILoginUserPayload {
-email:string,
-password:string,
-
+    email: string;
+    password: string;
 }
 
-interface IGetUserResponse{
+interface IGetUserResponse {
     status: number;
-    message:{
-    mail:string,
-    user_id:string,
-    name:string,
-    phone_number:string,
-    city:string,
-    reg_date: string;
-
-    }
+    message: {
+        mail: string;
+        user_id: string;
+        name: string;
+        phone_number: string;
+        city: string;
+        reg_date: string;
+    };
 }
+
+// Создание API
+
 export const authApi = createApi({
-  reducerPath: 'authApi', 
-  baseQuery: fetchBaseQuery({ baseUrl:baseUrl,}),
-  endpoints: (builder) => ({
-    registerUser: builder.mutation<IRegistrationUserPayload,IRegistrationUserResponse>({
-      query: (payload) =>({
-        url:"registration",
-        method:"POST",
-        body:payload,
-      }),
+    reducerPath: 'authApi',
+    baseQuery: fetchBaseQuery({
+        baseUrl: baseUrl,
+        prepareHeaders: (headers) => {
+            headers.set('X-RapidAPI-Key', apiKey);
+            headers.set('X-RapidAPI-Host', apiHost);
+            return headers;
+        },
     }),
-    loginUser: builder.mutation<ILoginUserResponse,ILoginUserPayload>({
-        query:(payload)=>({
-            url:"login",
-            method:"POST",
-            body:payload,
+    endpoints: (builder) => ({
+        // Раскомментируйте или добавьте другие эндпоинты здесь, если это необходимо
+        loginUser: builder.mutation<ILoginUserResponse, ILoginUserPayload>({
+            query: (payload) => ({
+                url: 'login',
+                method: 'POST',
+                body: payload,
+            }),
+        }),
+        getUser: builder.query<IGetUserResponse, string>({
+            query: (userId) => `/user?${userId}`,
         }),
     }),
-    getUser: builder.query<IGetUserResponse, string>({
-        query: (userId) => `/user?user_id=${userId}`,
-    }),
-  }),
-})
-  export const { useGetUserQuery,useLoginUserMutation, useRegisterUserMutation }=authApi  
+});
+
+// Экспорт хуков для использования в компонентах React
+
+export const { useGetUserQuery, useLoginUserMutation } = authApi;
+
+

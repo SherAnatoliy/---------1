@@ -93,6 +93,7 @@ justify-content: center;
     border: 1px solid #b1b1b1;
     border-left: none;
     background-color: white; 
+
 }
 
 

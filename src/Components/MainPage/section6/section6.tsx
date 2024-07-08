@@ -7,6 +7,7 @@ export const Section6 = () => {
  <div className="section6">
       <div className="section5_card">
         <img src="../../../public/Img/Main/section6/nar-logo-2020.svg" alt="" />
+
         <p>Find out how the NAR works for consumers and REALTORS®</p>
       </div>
       <div className="section5_card">
