@@ -10,8 +10,8 @@ export const Search = () => {
         <div className="search">
             <h1>The #1 site real estate professionals trust<sup>*</sup></h1>
             <div className="Search_top">
-            <a href="">Buy</a>
-            <a href="">Rent</a>
+            <a href="/MainPage">Buy</a>
+            <a href="/favorite">Favorite</a>
             <a href="">Sell</a>
             <a href="">Pre-approval</a>
             <a href="">Just sold</a>
